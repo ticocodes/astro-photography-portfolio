@@ -64,9 +64,9 @@ Edit the `site.config.mts` file to update your personal information:
 
 ```typescript
 export default {
-  title: 'SR',
+  title: 'AP',
   favicon: 'favicon.ico',
-  owner: 'Sara Richard',
+  owner: 'Alex Perez',
   // ... Other configurations
 };
 ```

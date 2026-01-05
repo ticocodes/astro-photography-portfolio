@@ -2,7 +2,7 @@
 title: About me
 ---
 
-### Hi, I'm Sara Richard 👋
+### Hi, I'm Alex Perez 👋
 
 I've been a photographer for over 10 years, focusing primarily on landscape and portrait photography. My journey began
 with a simple point-and-shoot camera while traveling through the mountains of Colorado, which sparked a passion that has
