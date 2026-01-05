@@ -1,7 +1,9 @@
 name: Deploy Astro Site
 
 permissions:
-  contents: write
+  contents: read
+  pages: write
+  id-token: write
 
 on:
   push:
@@ -11,6 +13,9 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: Checkout the source repository
@@ -28,7 +33,11 @@ jobs:
       - name: Build the Astro site
         run: npm run build
 
-      - name: Deploy to photography-portfolio repository
-        uses: JamesIves/github-pages-deploy-action@v4
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          folder: dist
+          path: ./dist
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
